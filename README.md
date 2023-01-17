@@ -19,7 +19,7 @@ All versions:
 
 Specific version:
 
-`docker pull gerritforge/gatling:3.8.4`
+`docker pull gerritforge/gatling:3.9.0`
 
 Alternatively Build an image from Dockerfile: `docker build -t="gerritforge/gatling" .`
 
