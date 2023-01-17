@@ -21,7 +21,7 @@ Specific version:
 
 `docker pull gerritforge/gatling:3.8.4`
 
-Alternatively Build an image from Dockerfile: `docker build -t="gerritforge/gatling" github.com/gerritforge/docker-gatling`
+Alternatively Build an image from Dockerfile: `docker build -t="gerritforge/gatling" .`
 
 ### Usage
 
@@ -29,7 +29,7 @@ Use image to run container
 
 `docker run -it --rm gerritforge/gatling`
 
-Mount configuration and simulation files from the host machine and run Gatling in interactive mode.
+Mount configuration and simulation files from the host machine and run Gatling.
 
 ```
 docker run -it --rm -v /home/core/gatling/conf:/opt/gatling/conf \
@@ -37,7 +37,8 @@ docker run -it --rm -v /home/core/gatling/conf:/opt/gatling/conf \
 -v /home/core/gatling/results:/opt/gatling/results \
 gerritforge/gatling --run-mode local
 ```
-Note the `--run-mode local` which tells gatling to run the test in local mode, for more information regarding this please refer to [Gatling docs](https://gatling.io/docs/gatling/reference/current/core/configuration/#cli-options).
+Note the `--run-mode local` which tells gatling to run the test in local mode, for more information
+regarding this please refer to [Gatling docs](https://gatling.io/docs/gatling/reference/current/core/configuration/#cli-options).
 Use the -e switch to use JAVA_OPTS to pass parameters to Gatling tests
 
 `docker run -e JAVA_OPTS="-Dusers=10" -it --rm gerritforge/gatling`
