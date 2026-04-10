@@ -19,7 +19,7 @@ All versions:
 
 Specific version:
 
-`docker pull gerritforge/gatling:3.9.0`
+`docker pull gerritforge/gatling:3.9.5`
 
 Alternatively Build an image from Dockerfile: `docker build -t="gerritforge/gatling" .`
 
@@ -29,13 +29,15 @@ Use image to run container
 
 `docker run -it --rm gerritforge/gatling`
 
-Mount configuration and simulation files from the host machine and run Gatling.
+Mount configuration and simulation files from the host machine and run Gatling specifying
+the simulation class (e.g. `my.company.simulation.SimulationClass`) and the associated
+JVM options (e.g. `-Xms8g -Xmx8g`):
 
 ```
 docker run -it --rm -v /home/core/gatling/conf:/opt/gatling/conf \
 -v /home/core/gatling/user-files:/opt/gatling/user-files \
 -v /home/core/gatling/results:/opt/gatling/results \
-gerritforge/gatling --run-mode local
+gerritforge/gatling --run-mode local -s my.company.simulation.SimulationClass --extra-run-jvm-options "-Xms8g -Xmx8g"
 ```
 Note the `--run-mode local` which tells gatling to run the test in local mode, for more information
 regarding this please refer to [Gatling docs](https://gatling.io/docs/gatling/reference/current/core/configuration/#cli-options).
