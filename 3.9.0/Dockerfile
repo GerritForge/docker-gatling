@@ -2,7 +2,7 @@
 #
 # Documentation: https://gatling.io/docs/3.9/
 # Cheat sheet: https://gatling.io/docs/3.9/cheat-sheet/
-FROM amazoncorretto:8u352-al2
+FROM eclipse-temurin:17.0.18_8-jdk-noble
 LABEL org.opencontainers.image.authors=GerritForge
 # working directory for gatling
 WORKDIR /opt
